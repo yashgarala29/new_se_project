@@ -48,10 +48,11 @@
                    <td><button class="button button2" onclick="location.href='http://localhost:8080/SEpro/pre_register_your_book.jsp';" >pre register your book</button></td>
                    <td><button class="button button2" onclick="location.href='http://localhost:8080/SEpro/View_your_detail.jsp'">View your detail</button></td>
                  </tr>
+                  
            </tbody>
        </table>
            <button class="button button2">renew book</button>
-           <button class="button button2">feedback</button>               
+           <button class="button button2" onclick="location.href='mailto:someone@example.com?Subject= Library Management'" target="_top">feedback</button>               
           
       
         </center>

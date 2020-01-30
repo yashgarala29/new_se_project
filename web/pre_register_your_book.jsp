@@ -31,6 +31,14 @@
                     <td><input type="text" name="author" value="" /></td>
                 </tr>
                 <tr>
+                    <td>date of issue book</td>
+                    <td> <input type="date" name="issue"</td>
+                </tr>
+                <tr>
+                    <td>date of submit book</td>
+                    <td> <input type="date" name="submit"</td>
+                </tr>
+                <tr>
             
                     <td colspan="2"  > <input type="submit" value="submit" /> </td>
                     
