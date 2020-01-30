@@ -9,9 +9,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>renew book</title>
     </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+    <center>
+        <body>
+            <h1>renew book</h1>
+            <table border="0">
+                <tbody>
+                    <tr>
+                        <td>  </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </body>
+     </center>
 </html>
