@@ -39,7 +39,7 @@ public class LibraryManagement extends HttpServlet {
           //out.print(a);
            if(a != null)
             {
-                out.print(username+"=============");
+               
                  out.print(password); 
                 Cookie c = new Cookie("username", username);
                  c.setMaxAge(30);
