@@ -17,12 +17,49 @@
             <table border="0">
                 <tbody>
                     <tr>
-                        <td>  </td>
-                        <td></td>
+                        <td colspan="2"> book1 </td>
+                     </tr>
+                    <tr>
+                         <td> how many days </td>
+                         <td>                            
+                            <%
+                                out.print("<select name='day'>");
+                                for(int i=1;i<=30;i++)
+                                out.print("<option>"+i+"</option>");
+                                out.print("</select>");
+                            %>
+                        </td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
+                        <td colspan="2"> book2 </td>
+                        </tr>
+                    <tr>
+                         <td> how many days </td>
+                        <td>
+                       
+                            
+                            <%
+                                out.print("<select name='day'>");
+                                for(int i=1;i<=30;i++)
+                                out.print("<option>"+i+"</option>");
+                                out.print("</select>");
+                            %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"> book3 </td>
+                    </tr>
+                    <tr>
+                         <td> how many days </td>
+                        <td>
+                            
+                            <%
+                                out.print("<select name='day'>");
+                                for(int i=1;i<=30;i++)
+                                out.print("<option>"+i+"</option>");
+                                out.print("</select>");
+                            %>
+                        </td>
                     </tr>
                 </tbody>
             </table>
