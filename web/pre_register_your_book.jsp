@@ -12,7 +12,7 @@
         <title>pre register your book</title>
     </head>
     <center>
-    <body>
+    
         <h1>pre register your book</h1>
         
         <table border="0">
@@ -32,11 +32,11 @@
                 </tr>
                 <tr>
                     <td>date of issue book</td>
-                    <td> <input type="date" name="issue"</td>
+                    <td> <input type="date" name="issue"></td>
                 </tr>
                 <tr>
                     <td>date of submit book</td>
-                    <td> <input type="date" name="submit"</td>
+                    <td> <input type="date" name="submit"></td>
                 </tr>
                 <tr>
             
@@ -47,6 +47,5 @@
         </table>
 
         
-      </body>
     </center>
 </html>
