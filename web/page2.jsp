@@ -6,41 +6,16 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%--<%@page contentType="text/css" %>--%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <style>
-            .button {
-              background-color: #4CAF50; /* Green */
-              border: none;
-              color: white;
-              padding: 25px 40px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 10px 20px;
-              webkit-transition-duration: 0.4s; /* Safari */
-              transition-duration: 0.4s;
-              cursor: pointer;
-            }
-            .button2 {
-                background-color: white; 
-                color: black; 
-                border: 2px solid #008CBA;
-              }
-
-              .button2:hover {
-                background-color: #008CBA;
-                color: white;
-              }
-
-       </style>
-       <center>
-       <table border="0" >
+    <center>
+        <table border="0" >
            
            <tbody>
                <tr>
@@ -52,9 +27,7 @@
            </tbody>
        </table>
            <button class="button button2" onclick="location.href='http://localhost:8080/SEpro/renew_book.jsp'">renew book</button>
-           <button class="button button2" onclick="location.href=''>feedback</button>               
-          
-      
+           <button class="button button2" onclick="location.href=''">feedback</button>               
         </center>
     </body>
 </html>
