@@ -16,7 +16,7 @@
         <title>View your detail</title>
     </head>
  <%!
-         String name,email,branch,password,id;
+         String book1,book1_date,book2,book2_date,book3,book3_date;
          ResultSet rs;
  
         %>
@@ -31,18 +31,17 @@
 //                 out.print(id);
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/java","root", "");        
-                String sql="SELECT * FROM `test` WHERE id=?";
+                String sql="SELECT * FROM `user_book` WHERE id=?";
                 PreparedStatement statement = con.prepareStatement(sql);
                 statement.setInt(1,id);
                 rs = statement.executeQuery(); 
                 rs.next();
-                 name = rs.getString("username");
-                 password = rs.getString("password");
-                 this.id = rs.getString("id");
-                 email = rs.getString("email");
-                 branch = rs.getString("branch");
-                 
-                 
+                 book1 = rs.getString("book1");
+                 book1_date = rs.getString("book1_date");
+                 book2 = rs.getString("book2");
+                 book2_date = rs.getString("book2_date");
+                 book3 = rs.getString("book3");
+                 book3_date = rs.getString("book3_date");
              }catch(Exception e)
              {
                  out.print(e);
@@ -51,20 +50,19 @@
     <center>
     <body>
         <h1>your detail</h1>
-        <table border="1" width="350" height="250">
-                <tbody>
+        <table border="1" width="" height="250">
+           <thead>
+               <tr><td colspan="3"><h2> BOOK NAME</h2></td>
+                   <td  width=""><h2>BOOK RETURN DATE</h2></td> </tr>
+           </thead>
+            <tbody>
                     <hr>
-                    <tr><td colspan="3">Name : </td>
-                        <td width="200"><% out.print(name); %></tr>
-                    <tr><td colspan="3">Password : </td>
-                        <td width="200"><% out.print(password); %></td></tr>
-                    <tr><td colspan="3">Email Id : </td>
-                        <td width="200"><br><% out.print(email); %></td></tr>
-                    <tr><td colspan="3">Branch : </td>
-                        <td width="200"><% out.print(branch); %></td></tr>
-                    <tr><td colspan="3">Id : </td>
-                        <td width="200"><% out.print(id); %></td></tr>
-                    
+                    <tr><td colspan="3"><% out.print(book1); %></td>
+                        <td width=""><% out.print(book1_date); %></tr>
+                    <tr><td colspan="3"><% out.print(book2); %></td>
+                        <td width=""><% out.print(book2_date); %></td></tr>
+                    <tr><td colspan="3"><% out.print(book3); %></td>
+                        <td width=""><br><% out.print(book3_date); %></td></tr>
                     
                 </tbody>
             </table>

@@ -5,104 +5,102 @@
  */
 package Library;
 
-import static com.sun.javafx.animation.TickCalculation.sub;
-import com.sun.javafx.font.LogicalFont;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Locale;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
-/**
- *
- * @author user1
- */
 @WebServlet(name = "LibraryManagement", urlPatterns = {"/LibraryManagement"})
 public class LibraryManagement extends HttpServlet {
 
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
          String username = request.getParameter("username");
            String password = request.getParameter("password");
            int flag=0;
            String sub = "Invalid username";
         try (PrintWriter out = response.getWriter()) {
-           String a  = (String)request.getParameter("remamber");
+           //String a  = (String)request.getParameter("remamber");
+           
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost/java","root", "");        
+//            Statement stmt = con.createStatement();
+            String sql="SELECT * FROM `test` WHERE username=? AND password=?"; 
+//            String sql = "select * from test  WHERE username = ? and password = ?";
+            PreparedStatement statement = con.prepareStatement(sql);
+            statement.setString(1, username);
+            statement.setString(2, password);
+            try{
+            ResultSet rs = statement.executeQuery();    
             
-          //out.print(a);
-           if(a != null)
+            
+            if(rs.next())
             {
-               
-                 out.print(password); 
-                Cookie c = new Cookie("username", username);
-                 c.setMaxAge(30);
-                 response.addCookie(c);
-                 Cookie c1 = new Cookie("password", password);
-                 c1.setMaxAge(30);
-                 response.addCookie(c1);
-                 
-            } 
-           if(username.equals("user1") || username.equals("abcd"))
-           {
-               if(password.equals("user1"))
-               {
-                   response.sendRedirect("page1.jsp");
-               }
-               else if(password.equals("user10702"))
-               {
-                   
-                   response.sendRedirect("page2.jsp");
-                   
-//                     disp = response.("/page1");
-//                     disp.include(request, response);
-               }
-               else
+                int x=rs.getInt("superuser");
+                String s=rs.getString("username");
+                 HttpSession session=request.getSession();
+                 session.setAttribute("username", username);
+                   int id=rs.getInt("id");
+                 session.setAttribute("id",id);
+                if(x==1)
                 {
-                   sub = "Invalid  password";
+                   response.sendRedirect("page1.jsp");
+                
+                }
+                else 
+                {
+                   response.sendRedirect("page2.jsp"); 
+                }
+                
+            }
+            else
+            {
+                   sub = "Invalid  password or username";
                    flag=1;
-                }  
+            }
+            }catch(Exception e)
+            {
+                out.print(e);
+            }     
 
            }
-           else
-           {
-               flag=1;
-           }
+           
            if(flag==1)
            {
                String str = "<font color=\"red\">" + sub + "</font>";
                 request.setAttribute("str", str);
-                
                 RequestDispatcher disp = request.getRequestDispatcher("/LogIn.jsp");
                 disp.include(request, response);
-              
-              
-              // response.sendRedirect("http://localhost:8084/Login/LogIn.jsp");
            }
            
            
         }
-    }
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(conection.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(conection.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -116,7 +114,13 @@ public class LibraryManagement extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(conection.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(conection.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -129,4 +133,7 @@ public class LibraryManagement extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
 }
+
+

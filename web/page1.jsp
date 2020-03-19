@@ -14,14 +14,14 @@
     </head>
     <body>
       <center>
-       <table border="0" >
-           
+       <table border="0" >           
            <tbody>
                <tr>
-                   <td><button class="button button2">View book</button></td>
+                   <td><button class="button button2" onclick="location.href='http://localhost:8080/SEpro/L_view_book.jsp';">View book</button></td>
                    <td><button class="button button2">issued book</button></td>
-                   <td><button class="button button2">View user</button></td>
-                   <td><button class="button button2">View issued books</button></td>
+                   <td><button class="button button2" onclick="location.href='http://localhost:8080/SEpro/L_view_user.jsp';">View user</button></td>
+                   
+                               
                </tr>
                <tr>
                    <td><button class="button button2">renew book</button></td>

@@ -4,9 +4,33 @@
         <servlet-name> LibrayManagement </servlet-name>
         <servlet-class>Library.LibrayManagement</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>conection</servlet-name>
+        <servlet-class>Library.conection</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>connection_n</servlet-name>
+        <servlet-class>Library.connection_n</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>renewbook</servlet-name>
+        <servlet-class>Library.renewbook</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>LibrayManagement</servlet-name>
         <url-pattern>/LibrayManagement</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>conection</servlet-name>
+        <url-pattern>/conection</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>connection_n</servlet-name>
+        <url-pattern>/connection_n</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>renewbook</servlet-name>
+        <url-pattern>/renewbook</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
