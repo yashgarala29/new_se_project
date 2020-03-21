@@ -5,6 +5,8 @@
  */
 package Library;
 
+import com.sun.java.swing.plaf.windows.resources.windows;
+import static java.awt.SystemColor.window;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -48,8 +50,12 @@ public class renewbook extends HttpServlet {
             String book2=request.getParameter("book2_day");
             String book3=request.getParameter("book3_day");
             HttpSession session=request.getSession(false);
-            int id=(Integer)session.getAttribute("id");
-            try{
+           int id=Integer.parseInt(request.getParameter("serch_id"));
+           if(id==0)
+           {
+             id=(Integer)session.getAttribute("id");
+           }
+             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost/java","root", "");        
                 String sql="SELECT * FROM `user_book` WHERE id=?";
@@ -87,10 +93,25 @@ public class renewbook extends HttpServlet {
                 statement.setString(3, new_book3_Date);
                  statement.setInt(4, id);
 //                 out.print(sql);
+                
                 statement.executeUpdate();
                 out.print("update sucessfuly");
-                 RequestDispatcher disp = request.getRequestDispatcher("/page2.jsp");
-                disp.include(request, response);
+                String sup=(String) session.getAttribute("super");
+//                return;
+                if(sup.equals("0"))
+                {
+                    RequestDispatcher disp = request.getRequestDispatcher("/page2.jsp");
+                    disp.include(request, response);
+                }
+                else
+                {
+                    RequestDispatcher disp = request.getRequestDispatcher("/page1.jsp");
+                    disp.include(request, response);
+                }
+                //RequestDispatcher disp = request.getRequestDispatcher("/page2.jsp");
+                //disp.include(request, response);
+//                 window.history.back();
+                
             }catch(Exception e)
             {
                 out.print(e);

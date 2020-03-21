@@ -58,6 +58,8 @@ public class LibraryManagement extends HttpServlet {
                  session.setAttribute("username", username);
                    int id=rs.getInt("id");
                  session.setAttribute("id",id);
+                 String sup=rs.getString("superuser");
+                 session.setAttribute("super",sup );
                 if(x==1)
                 {
                    response.sendRedirect("page1.jsp");
