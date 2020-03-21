@@ -34,7 +34,7 @@ public class LibraryManagement extends HttpServlet {
          String username = request.getParameter("username");
            String password = request.getParameter("password");
            int flag=0;
-           String sub = "Invalid username";
+           String sub = "Invalid username OR password";
         try (PrintWriter out = response.getWriter()) {
            //String a  = (String)request.getParameter("remamber");
            
@@ -46,14 +46,17 @@ public class LibraryManagement extends HttpServlet {
             PreparedStatement statement = con.prepareStatement(sql);
             statement.setString(1, username);
             statement.setString(2, password);
+            
             try{
             ResultSet rs = statement.executeQuery();    
-            
-            
+                        
             if(rs.next())
             {
+
+
                 int x=rs.getInt("superuser");
                 String s=rs.getString("username");
+                
                  HttpSession session=request.getSession();
                  session.setAttribute("username", username);
                    int id=rs.getInt("id");
@@ -73,26 +76,30 @@ public class LibraryManagement extends HttpServlet {
             }
             else
             {
+                              
                    sub = "Invalid  password or username";
                    flag=1;
             }
             }catch(Exception e)
             {
-                out.print(e);
-            }     
-
-           }
-           
-           if(flag==1)
-           {
-               String str = "<font color=\"red\">" + sub + "</font>";
+                 String str = "<font color=\"red\">" + sub + "</font>";
                 request.setAttribute("str", str);
                 RequestDispatcher disp = request.getRequestDispatcher("/LogIn.jsp");
                 disp.include(request, response);
+            }     
+            
            }
-           
-           
+         if(flag==1)
+           {
+               String str = "<font color=\"red\">" + sub + "</font>";
+                request.setAttribute("str", str);
+                response.sendRedirect("LogIn.jsp");
+                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
+                disp.include(request, response);
+           }
+              
         }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
