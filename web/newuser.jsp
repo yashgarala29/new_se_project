@@ -10,10 +10,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Library User Registration</title>
+         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
     <center><h1><marquee>Registration Form </marquee></h1><br>
-        <form name="registration" action="idcheck.jsp">
+        <form name="registration" action="add_new_user.jsp">
             <table border="0" width="350" height="250">
                 <tbody>
                     <hr>
@@ -26,12 +27,9 @@
                     <tr><td colspan="3">Branch : </td>
                         <td><select name="branch" required=""><option>CE</option>
                                 <option>IT</option><option>EC</option></select></td></tr>
-                    <tr><td colspan="3">Id : </td>
-                        <td><input type="text" name="id" required=""/></td></tr>
-                    <tr><td colspan="3">Phone Number : </td>
-                        <td><input type="tel" name="phone"</td></tr>
+                    
                     <tr>
-                        <td><input type="submit" value="signup" name="signup" /></td></tr>
+                        <td><button class="button button2">submit</button></td></tr>
                 </tbody>
             </table>
         </form></center>
