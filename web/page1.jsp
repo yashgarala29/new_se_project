@@ -13,6 +13,18 @@
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <% //
+//            String s1=(String)session.getAttribute("super");
+//            if(s1==null)
+//            {
+//                String sub = "Pleas login";
+//                   String str = "<font color=\"red\">" + sub + "</font>";
+//                request.setAttribute("str", str);
+//                response.sendRedirect("LogIn.jsp");
+////                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
+////                disp.include(request, response);
+//            }
+        %>
       <center>
        <table border="0" >           
            <tbody>
@@ -20,7 +32,7 @@
                    <td><button class="button button2" onclick="window.location.href='/SEpro/L_view_book.jsp'" >View book</button></td>
                    <td><button class="button button2" onclick="window.location.href='/SEpro/L_issued_book.jsp'">issued book</button></td>
                    <td><button class="button button2" onclick="window.location.href='/SEpro/L_view_user.jsp'" >View user</button></td>
-                   
+                   <td><button class="button button2" onclick="window.location.href='/SEpro/L_add_user.jsp'" >Add user</button></td>
                                
                </tr>
                <tr>

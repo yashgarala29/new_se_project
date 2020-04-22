@@ -53,7 +53,7 @@ public class LibraryManagement extends HttpServlet {
             if(rs.next())
             {
 
-
+                
                 int x=rs.getInt("superuser");
                 String s=rs.getString("username");
                 
@@ -76,9 +76,14 @@ public class LibraryManagement extends HttpServlet {
             }
             else
             {
-                              
+                          
                    sub = "Invalid  password or username";
                    flag=1;
+                   String str = "<font color=\"red\">" + sub + "</font>";
+                request.setAttribute("str", str);
+                //response.sendRedirect("LogIn.jsp");
+                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
+                disp.include(request, response);
             }
             }catch(Exception e)
             {
@@ -91,9 +96,11 @@ public class LibraryManagement extends HttpServlet {
            }
          if(flag==1)
            {
+               PrintWriter out = response.getWriter();
+               out.print("1111111111");
                String str = "<font color=\"red\">" + sub + "</font>";
                 request.setAttribute("str", str);
-                response.sendRedirect("LogIn.jsp");
+                //response.sendRedirect("LogIn.jsp");
                 RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
                 disp.include(request, response);
            }

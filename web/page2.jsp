@@ -14,6 +14,18 @@
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
+        <%
+//            String s1=(String)session.getAttribute("super");
+//            if(s1==null)
+//            {
+//                String sub = "Pleas login";
+//                   String str = "<font color=\"red\">" + sub + "</font>";
+//                request.setAttribute("str", str);
+//                response.sendRedirect("LogIn.jsp");
+////                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
+////                disp.include(request, response);
+//            }
+        %>
     <center>
         <table border="0" >
            
