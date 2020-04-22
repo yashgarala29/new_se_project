@@ -44,7 +44,7 @@
                  book3_date = rs.getString("book3_date");
              }catch(Exception e)
              {
-                 out.print(e);
+                // out.print(e);
              }
     %>
     <center>
