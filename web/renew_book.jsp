@@ -51,7 +51,7 @@
             <h1>renew book</h1>
             <div class="container">
             <form action="renewbook" method="POST">
-                
+                <input type="text" name="serch_id" value="<%int id=(Integer)session.getAttribute("id"); out.print(id); %>" readonly="readonly" />
             <table border="0">
                 <tbody>
                     <tr>
