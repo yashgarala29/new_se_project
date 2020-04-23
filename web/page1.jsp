@@ -13,17 +13,21 @@
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <% //
-//            String s1=(String)session.getAttribute("super");
-//            if(s1==null)
-//            {
-//                String sub = "Pleas login";
-//                   String str = "<font color=\"red\">" + sub + "</font>";
-//                request.setAttribute("str", str);
-//                response.sendRedirect("LogIn.jsp");
-////                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
-////                disp.include(request, response);
-//            }
+        <% 
+            session=request.getSession(false);
+            String s1=(String)session.getAttribute("super");
+            
+            if( s1==null)
+            {
+                String sub = "Pleas login";
+                   String str = "<font color=\"red\">" + sub + "</font>";
+                request.setAttribute("str", str);
+                //response.sendRedirect("LogIn.jsp");
+                RequestDispatcher disp = request.getRequestDispatcher("LogIn.jsp");
+                disp.include(request, response);
+                return;
+                //response.sendRedirect("LogIn.jsp");
+            }
         %>
       <center>
        <table border="0" >           
@@ -43,6 +47,9 @@
                </tr>
            </tbody>
        </table>
+                 <br>
+           <button class="button button2" onclick="window.location.href='/SEpro/Logout.jsp'" >log out</button>
+    
         </center>
 
       
