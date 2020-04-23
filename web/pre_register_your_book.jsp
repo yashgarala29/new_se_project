@@ -10,11 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>pre register your book</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css">
+
     </head>
     <center>
     
         <h1>pre register your book</h1>
-        
+        <div class="container">
         <table border="0">
            
             <tbody>
@@ -45,7 +47,7 @@
                 </tr>
             </tbody>
         </table>
-
+            </div>
         
     </center>
 </html>

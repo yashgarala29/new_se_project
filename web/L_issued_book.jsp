@@ -16,13 +16,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>View your detail</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="css/login.css" rel="stylesheet" type="text/css">
     </head>
     <center>
+        <div class="container">
         <form action="L_issued_book.jsp" method="POST">
             book name:<input type="text" name="book_name" value="" /><br>
             user name:<input type="text" name="user_name" value="" />
         <button class="button button2">serch</button>
         </form>
+            </div>
  <%!
          String user_email,book_id,book_name,book_author,user_name,user_id,branch;
          ResultSet rs;

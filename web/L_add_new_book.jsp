@@ -16,14 +16,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>View your detail</title>
         <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="css/login.css" rel="stylesheet" type="text/css">
     </head>
     <center>
+        <div class="container">
         <form action="L_add_new_book.jsp" method="POST">
             book name:<input type="text" name="book_name" value="" />
             book author:<input type="text" name="book_author" value="" />
             no of book:<input type="text" name="no_of_book" value="" />
         <button class="button button2">add book</button>
         </form>
+            </div>
  <%!
          String book_name,book_author,no_of_book;
          ResultSet rs;

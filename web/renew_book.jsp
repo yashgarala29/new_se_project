@@ -14,6 +14,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>renew book</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css">
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <%!
@@ -48,6 +49,7 @@
     <center>
         <body>
             <h1>renew book</h1>
+            <div class="container">
             <form action="renewbook" method="POST">
                 
             <table border="0">
@@ -104,7 +106,7 @@
             </table>
  
                         <button class="button button2">submit</button>
-        </form>
+        </form></div>
             </body>
      </center>
 </html>

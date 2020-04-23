@@ -14,14 +14,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>renew book</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css">
         <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     <center>
+        <div class="container">
     <form action="L_renew_book.jsp" method="POST">
         user id
         <input type="text" name="id" value="" />
          <button class="button button2">serch</button>
     </form>
+            </div>
     <%!
          String book1=null,book2=null,book3=null;
                ResultSet rs;

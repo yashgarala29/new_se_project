@@ -10,10 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add user</title>
+        <link href="css/login.css" rel="stylesheet" type="text/css">
         <link href="style.css" rel="stylesheet" type="text/css">
-    </head><center>
+    </head>
+    <center>
         <h1><marquee>Registration Form </marquee></h1><br>
     <body>
+        <div class="container">
         <form action="L_add_data.jsp" method="POST">
         <table border="0" width="350" height="250">
                 <tbody>
@@ -34,6 +37,6 @@
                 </tbody>
             </table>
         </form>  
-        
+        </div>
     </body></center>
 </html>
